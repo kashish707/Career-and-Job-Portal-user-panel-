@@ -1,0 +1,86 @@
+.landing_img {
+  background: url(../../../assets/image/comp.png);
+  height: 550px;
+  width: 1345px;
+  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-position: center;
+  position: relative;
+  margin-left: -120px;
+  margin-right: -100px;
+}
+.landing {
+  color: black;
+  padding-top: 170px;
+  padding-left: 130px;
+}
+
+.designation {
+  font-size: 50px;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+  color: #7c7c7c;
+  margin-bottom: 3rem;
+}
+.body {
+  /* font-family: "Montserrat" !important; */
+  font-family: "Montserrat", sans-serif !important;
+  color: #707070;
+}
+/* form {
+  position: fixed;
+} */
+
+.login-dark form {
+  height: 500px;
+  width: 350px;
+  margin-top: 300px;
+  margin-left: 200px;
+  padding: 40px;
+  color: black;
+  background-color: white;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 64px;
+  box-shadow: 3px 3px 4px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 100px;
+}
+
+.login-dark form .form-control {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #434a52;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+}
+
+.login-dark form .btn-primary {
+  background: #214a80;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 35px;
+  margin-left: 0px;
+  text-shadow: none;
+  opacity: 0.6;
+  transition: 0.3s;
+  outline: none;
+}
+
+.login-dark form .btn-primary:hover {
+  opacity: 1;
+  background: #214a80;
+  outline: none;
+}
+
+.login-dark form .btn-primary:active {
+  transform: translateY(1px);
+}

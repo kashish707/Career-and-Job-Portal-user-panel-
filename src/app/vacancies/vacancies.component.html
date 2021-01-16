@@ -1,0 +1,104 @@
+<app-header></app-header>
+<!-- landing page -->
+
+<app-landing-page></app-landing-page>
+
+<!-- hot job -->
+<div class="row">
+  <img class="hot_job" src="../../assets/image/fire.jpg" alt="hot job" />
+  <h1 style="font-weight: normal">Hot Jobs</h1>
+</div>
+
+<!-- jobs -->
+
+<div class="curved-div">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path
+      fill="#e60000"
+      fill-opacity="0.8"
+      d="M0,192L48,165.3C96,139,192,85,288,80C384,75,480,117,576,144C672,171,768,181,864,181.3C960,181,1056,171,1152,138.7C1248,107,1344,53,1392,26.7L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+    ></path>
+  </svg>
+  <div class="color">
+    <!-- cards -->
+
+    <div [hidden]="isLoading" *ngFor="let e of lis" id="vacancy">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>{{ e.Designation }}</h2>
+          <br />
+          <h5>{{ e.JobLocation }}-{{ e.JobCategory }}</h5>
+          <br />
+        </div>
+        <div class="col-md-6">
+          <a href="#" class="btn apply-button" [routerLink]="['/apply/' + e.id]"
+            >Apply</a
+          >
+        </div>
+        <div class="col-md-7"><hr /></div>
+      </div>
+    </div>
+
+    <!-- loader -->
+    <div class="loadingArea center" *ngIf="isLoading">
+      <app-loader></app-loader>
+    </div>
+
+    <!-- <div *ngFor="let e of lis" class="card">
+      <div class="card-header">
+        <h3>{{ e.Designation }}</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="skills" class="col-md-6 col-6">
+            <h5 class="card-title">Job Category</h5>
+            <p class="card-text">
+              {{ e.JobCategory }}
+            </p>
+          </div>
+
+          <div class="skills" class="col-md-6 col-6">
+            <h5 class="card-title">Qualification</h5>
+            <p class="card-text">
+              {{ e.Qualification }}
+            </p>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="skills" class="col-md-6 col-6">
+            <h5 class="card-title">Job Location</h5>
+            <p class="card-text">
+              {{ e.JobLocation }}
+            </p>
+          </div>
+
+          <div class="skills" class="col-md-6 col-6">
+            <h5 class="card-title">Salary</h5>
+            <p class="card-text">
+              {{ e.Salary }}
+            </p>
+          </div>
+        </div>
+
+        <br />
+        <div class="skills">
+          <h5 class="card-title">Job Description</h5>
+          <p class="card-text">
+            {{ e.JobDescription }}
+          </p>
+        </div>
+
+        <a href="#" class="btn apply-button" routerLink="/apply">Apply</a>
+      </div>
+    </div> -->
+
+    <!-- dot -->
+    <div class="row">
+      <p>...</p>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<app-footer></app-footer>

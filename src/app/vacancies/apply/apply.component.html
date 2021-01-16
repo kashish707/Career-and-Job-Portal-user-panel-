@@ -1,0 +1,180 @@
+<div [hidden]="isLoading">
+  <!-- header -->
+  <app-header></app-header>
+
+  <!-- landing image -->
+
+  <div class="row" class="landing_img">
+    <div class="col-md-12" class="landing">
+      <h4>CAREERS</h4>
+      <div *ngFor="let e of lis">
+        <p class="big-heading" style="font-size: 100px">
+          {{ e.Designation }}
+        </p>
+        <h4>{{ id.JobLocation }}-{{ e.JobCategory }}</h4>
+      </div>
+      <app-scroll-down></app-scroll-down>
+    </div>
+  </div>
+
+  <!-- vacancy details -->
+
+  <div class="row">
+    <div class="col-md-8" *ngFor="let e of lis">
+      <br /><br />
+      <h1 class="designation">{{ e.Designation }}</h1>
+      <br /><br />
+      <div class="body">
+        <p>
+          Welcome to Celebal ! At Celebal Technologies, you will work with the
+          world’s most talented Data Scientists, Engineers, and thought leaders
+          to change who businesses work. From Data Science jobs, to Marketing &
+          Business Analyst, to Finance and support positions – we operate
+          globally, think outside the box, and view our colleagues as friends.
+        </p>
+        <br />
+        <p>
+          We are looking for someone who even before reading this is inspecting
+          Celebal.com in Chrome and can come up with 101 ways to optimize the
+          page.
+        </p>
+        <h3>Desired Skills and Experience:</h3>
+        <b>Qualification</b> : {{ e.Qualification }}
+        <br />
+        <b>JobDescription</b> : {{ e.JobDescription }}
+        <br />
+        <b>Salary</b> :{{ e.Salary }}
+        <br />
+        <br />
+        <h3>Celebal is looking for someone who:</h3>
+        <p>
+          1. Understands business problems, hates slow websites and wants to own
+          the user experience at Celebal.
+        </p>
+        <p>
+          2. Can collaborate with product and marketing managers and developers
+          across the business to develop user flows, wireframes, mockups and
+          final designs that meet the business objectives of the organization,
+          advances our brand strategy and reflects best practices.
+        </p>
+        <p>
+          3. Overall responsibility for understanding companies business
+          requirements and converting that into appealing, highly usable
+          interfaces.
+        </p>
+        <p>
+          4. Design Expertise – Knowledge of User Interface Design principles
+          with heavy emphasis on mobile web, mobile app and industry best
+          practices.
+        </p>
+        <p>
+          5. Develop and maintain all guidelines and processes for our digital
+          properties and evolve according to best practices.
+        </p>
+        <p>
+          6. Manage multiple projects from conceptualization through completion.
+          Strong attention to detail, the software development process, and
+          prototyping.
+        </p>
+        <p>
+          7. Develops an understanding of the end users of the
+          website/application through secondary and primary research and data
+          (user interviews, traffic data).
+        </p>
+      </div>
+    </div>
+
+    <!-- apply form -->
+
+    <div class="login-dark">
+      <div class="col-md-4">
+        <form>
+          <div class="form-group">
+            <input
+              [(ngModel)]="applyData.first_name"
+              type="text"
+              id="fname"
+              class="form-control"
+              placeholder="First Name"
+              name="first_name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              [(ngModel)]="applyData.last_name"
+              type="text"
+              id="lname"
+              class="form-control"
+              placeholder="Last Name"
+              name="last_name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              [(ngModel)]="applyData.email"
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Email"
+              name="email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              [(ngModel)]="applyData.contact"
+              type="tel"
+              id="phone"
+              class="form-control"
+              placeholder="Phone"
+              name="contact"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              [(ngModel)]="applyData.vacancy"
+              type="text"
+              id="phone"
+              class="form-control"
+              placeholder="Vacancy"
+              name="vacancy"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              [(ngModel)]="applyData.resume"
+              type="file"
+              id="file"
+              class="form-control"
+              placeholder="Attach Resume"
+              accept="application/pdf"
+              name="resume"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <button
+              (click)="apply()"
+              class="btn btn-primary btn-block"
+              type="button"
+            >
+              Apply
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br />
+  <!-- footer -->
+  <app-footer></app-footer>
+</div>
+
+<!-- loader -->
+<div *ngIf="isLoading">
+  <app-apply-loader></app-apply-loader>
+</div>
